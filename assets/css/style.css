@@ -22,6 +22,9 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
 
   header h1 {
@@ -29,6 +32,8 @@ header {
     font-size: 36px;
     color: #fce138;
     margin: 0;
+      /* add alongside your existing declarations */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   header a {
@@ -52,6 +57,14 @@ header {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+      /* and here */
+  }
+
+  header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
   }
 
   footer {
@@ -92,16 +105,20 @@ header {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-attachment: fixed;
+    background-position: 80%;
   }
   /* Hero Style End */
 
   .hero-form {
     border: 3px solid #024e76;
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8);
     padding: 20px;
     color: #024e76;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
   }
 
   .hero-form p {
@@ -125,8 +142,14 @@ header {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
   }
-
+  /* create a new rule for focus state */
+  .form-input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+  }
   .hero-form label {
     margin: 0 5px;
   }
@@ -137,7 +160,13 @@ header {
     border: none; 
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
   }
+
+  .hero-form button:hover {
+    background-color: #39a6b2;  
+  }
+
   /* HERO STYLES END */
 
   .intro h2 {
@@ -299,7 +328,14 @@ header {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 10px;
+    /* add a transparent background here */
   }
+
+  /* create a new css rule for focus state */
+  .contact-form input:focus, .contact-form textarea:focus {
+
+}
 
   .contact-form button {
     width: 100%;
@@ -309,6 +345,12 @@ header {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
   }
   
   /* REACH OUT STYLES END */
@@ -339,6 +381,7 @@ header {
   font-style: italic;
   font-size: 55px;
   color: #fce138;
+    /* and here */
 }
 
 .step-text h4 {
@@ -351,12 +394,20 @@ header {
   margin: 50px auto;
   padding-bottom: 50px;
   width: 80%;
-  border-bottom: 1px solid #39a6b2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
+
+.step:nth-child(even) {
+  border-bottom: 1px solid #39a6b2;
+}
+
+.step:not(:last-child) {
+  border-bottom: 1px solid #39a6b2;
+}
+
 
 .step-info {
   flex: 2 70%
@@ -382,6 +433,12 @@ header {
   header {
     padding-bottom: 0;
     justify-content: center;
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
+    position: relative;
   }
 
   header h1 {
@@ -453,4 +510,35 @@ header {
     flex: 100%;  
   }
 
+}
+
+@media screen and (max-width: 575px) {
+
+  .hero-form button {
+    width: 100%;
+  }
+
+  .section-title {
+    width: 95%;
+  }
+
+  .intro p {
+    width: 100%;
+  }
+
+  .trainer {
+    flex: 0 100%;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-info > * {
+    flex: 0 100%;
+  }
+}
+
+.contact-form {
+  order: 3;
 }
