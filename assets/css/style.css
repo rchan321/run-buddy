@@ -9,6 +9,12 @@
     box-sizing: border-box;
   }
 
+  :root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+  }
+
   body {
     /* more on this crazy alphanumerical value in a minute! */
     color: #39a6b2;
@@ -598,3 +604,4 @@ header {
 .radio-wrapper input:checked + label::after {
   content: "";
 }
+
